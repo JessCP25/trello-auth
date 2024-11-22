@@ -21,7 +21,8 @@ export class LoginFormComponent {
 
   constructor(
     private formBuilder: FormBuilder,
-    private router: Router
+    private router: Router,
+    private authService: AuthService,
   ) { }
 
   doLogin() {
