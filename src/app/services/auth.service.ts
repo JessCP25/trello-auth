@@ -23,7 +23,8 @@ export class AuthService {
     })
     .pipe(
       tap(res => {
-        this.tokenService.saveToken(res.access_token)
+        this.tokenService.saveToken(res.access_token);
+        this.tokenService.saveRefreshToken(res.refresh_token);
       })
     );
   }
