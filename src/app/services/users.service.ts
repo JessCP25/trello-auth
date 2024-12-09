@@ -11,11 +11,9 @@ import { checkToken } from '@interceptors/token.interceptor';
 export class UsersService {
   private apiUrl = environment.API_URL;
 
-  constructor(private http: HttpClient, private tokenService: TokenService) {}
+  constructor(private http: HttpClient) {}
 
   getUsers() {
-    const token = this.tokenService.getToken();
-
     return this.http.get<User[]>(`${this.apiUrl}/api/v1/users`, {
       context: checkToken(),
     });
